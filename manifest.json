@@ -1,0 +1,10 @@
+{
+  "id": "x-publish-desk",
+  "name": "X 发布台",
+  "version": "2.2.0",
+  "minAppVersion": "1.8.0",
+  "description": "在 Obsidian 里预览、编辑 X 推文，存草稿、直接发布、定时发布，发完自动核对并归档。Preview, draft, publish and schedule X posts from Obsidian.",
+  "author": "林志伟 (@zwzw3888)",
+  "isDesktopOnly": true,
+  "authorUrl": "https://x.com/zwzw3888"
+}

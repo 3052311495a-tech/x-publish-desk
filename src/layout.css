@@ -1,0 +1,84 @@
+/* 2.1.2：保留定稿视觉，按 Obsidian 叶片的实际宽度布局。 */
+:host(.xpd-view) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 0;
+  box-sizing: border-box;
+  container-type: inline-size;
+  container-name: xpd-desk;
+}
+
+.xpd-view {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 0;
+  box-sizing: border-box;
+}
+.xpd-topbar,
+.xpd-body { width: 100%; min-width: 0; box-sizing: border-box; }
+.xpd-topbar > button { flex: 0 0 auto; white-space: nowrap; max-width: 100%; }
+.xpd-topbar > .xpd-chip { max-width: 100%; overflow-wrap: anywhere; }
+.xpd-body { flex: 1 1 0; }
+.xpd-body > .xpd-col { min-width: 0; flex-shrink: 0; }
+
+.xpd-editbar,
+.xpd-post-head,
+.xpd-quote-head,
+.xpd-version-head,
+.xpd-author,
+.xpd-result-row,
+.xpd-meter-inline { flex-wrap: wrap; min-width: 0; }
+.xpd-editbar > button { flex-shrink: 0; }
+.xpd-meter-inline > :first-child { white-space: nowrap; flex-shrink: 0; }
+.xpd-meter-inline .xpd-bar { flex: 1 1 80px; min-width: 40px; }
+.xpd-meter-inline .xpd-caption { white-space: normal; }
+
+.xpd-post-body,
+.xpd-quote-text,
+.xpd-version-text,
+.xpd-details-body,
+.xpd-article { overflow-wrap: anywhere; min-width: 0; }
+.xpd-article table { display: block; max-width: 100%; overflow-x: auto; }
+.xpd-article img { max-width: 100%; }
+
+@container xpd-desk (max-width: 600px) {
+  .xpd-topbar { padding: 12px 16px; }
+  .xpd-body { padding: 20px 0; }
+  .xpd-col { max-width: calc(100% - 32px); }
+  .xpd-article { padding: 16px; }
+}
+
+/* The scheduling modal lives outside the desk view/shadow root. */
+.xpd-time-picker { margin: 16px 0 12px; }
+.xpd-time-title { font-weight: var(--font-semibold); }
+.xpd-time-hint { margin: 4px 0 12px; color: var(--text-muted); font-size: var(--font-ui-small); }
+.xpd-time-wheels { display: grid; grid-template-columns: 1.3fr repeat(4, 1fr); gap: 6px; }
+.xpd-time-column { min-width: 0; text-align: center; }
+.xpd-time-heading { margin-bottom: 6px; color: var(--text-muted); font-size: var(--font-ui-small); }
+.xpd-time-frame { position: relative; overflow: hidden; border: 1px solid var(--background-modifier-border); border-radius: 10px; }
+.xpd-time-frame::before {
+  content: ''; position: absolute; top: 72px; left: 0; right: 0; height: 36px;
+  background: var(--background-modifier-hover); pointer-events: none;
+  border-top: 1px solid var(--background-modifier-border); border-bottom: 1px solid var(--background-modifier-border); box-sizing: border-box;
+}
+.xpd-time-wheel {
+  position: relative; height: 180px; padding: 72px 0; box-sizing: border-box;
+  overflow-y: auto; overflow-x: hidden; overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory; scrollbar-width: none; outline-offset: -2px;
+  font-variant-numeric: tabular-nums;
+}
+.xpd-time-wheel::-webkit-scrollbar { display: none; }
+.xpd-time-wheel:focus-visible { outline: 2px solid var(--interactive-accent); border-radius: 9px; }
+.xpd-time-option {
+  height: 36px; line-height: 36px; scroll-snap-align: center;
+  cursor: pointer; user-select: none; color: var(--text-muted); font-size: 16px;
+}
+.xpd-time-option[aria-selected='true'] { color: var(--text-normal); font-weight: 700; }
+.xpd-time-summary { font-variant-numeric: tabular-nums; font-weight: var(--font-semibold); overflow-wrap: anywhere; }
+
+/* Non-blocking reminders inside the delivery confirmation dialog. */
+.xpd-warn { color: var(--text-warning); background: rgba(var(--color-orange-rgb), 0.1); border-radius: 6px; padding: 6px 10px; }

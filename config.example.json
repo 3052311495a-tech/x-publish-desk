@@ -1,0 +1,17 @@
+{
+  "vault": "/Users/you/Documents/MyVault",
+  "drafts": "推特创作/03创作中",
+  "published": "推特创作/04已发布",
+  "articles": "推特创作/05长文",
+  "attachments": "推特创作/附件",
+  "excluded": ["推特创作/03创作中/评论"],
+  "account": "@your_handle",
+  "display_name": "Your Name",
+  "cookies": "/Users/you/.x-publish-desk/cookies.json",
+  "require_ready_fields": false,
+  "state_dir": "state",
+  "article_uploader": "",
+  "style_check": [],
+  "revision_learning": "",
+  "default_time_zone": "Asia/Shanghai"
+}

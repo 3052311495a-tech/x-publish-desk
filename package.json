@@ -1,0 +1,22 @@
+{
+  "name": "x-publish-desk",
+  "version": "2.2.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit && node esbuild.config.mjs",
+    "test": "node tests/default-opening.mjs && node tests/run.mjs && node tests/post-edit.mjs && node tests/article-edit.mjs && node tests/delivery-time.mjs && node tests/delivery-controls.mjs && node tests/delivery-backend.mjs && node tests/delivery-archive.mjs && node tests/archived-view.mjs && .venv/bin/python tests/backend-media.py && .venv/bin/python tests/delivery-runner.py && .venv/bin/python tests/post-delivery.py && .venv/bin/python tests/publish-cli.py"
+  },
+  "dependencies": {
+    "twitter-text": "3.1.0",
+    "yaml": "2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/twitter-text": "^3.1.0",
+    "esbuild": "^0.25.0",
+    "obsidian": "^1.8.7",
+    "typescript": "^5.8.3"
+  },
+  "license": "MIT",
+  "author": "林志伟 (@zwzw3888)"
+}

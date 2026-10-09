@@ -1,0 +1,28 @@
+# Personal settings and data — never commit
+config.json
+state/
+运行记录/
+请求/
+work/
+*.private.json
+
+# Local tooling
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Build output (attached to GitHub releases instead)
+main.js
+
+# Third-party tool that may not be redistributed (users install it themselves)
+vendor/x-article-draft-uploader/
+
+# Author's working notes and design mockups
+开发记录.md
+方案.md
+第二版修改说明.md
+设计稿/*
+!设计稿/styles.css
+docs/raw/

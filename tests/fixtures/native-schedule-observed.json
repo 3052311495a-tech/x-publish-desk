@@ -1,0 +1,28 @@
+{
+  "actual_submission": false,
+  "operation": "CreateScheduledTweet",
+  "payload": {
+    "variables": {
+      "post_tweet_request": {
+        "auto_populate_reply_metadata": false,
+        "richtext_options": {
+          "richtext_tags": [
+            {
+              "from_index": 0,
+              "to_index": 4,
+              "richtext_types": [
+                "Bold"
+              ]
+            }
+          ]
+        },
+        "status": "长推加粗定时兼容性检查。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。这段只在编辑框核对，不提交到服务器。",
+        "exclude_reply_user_ids": [],
+        "media_ids": [],
+        "thread_tweets": []
+      },
+      "execute_at": 1790938740
+    },
+    "queryId": "LCVzRQGxOaGnOnYH01NQXg"
+  }
+}
