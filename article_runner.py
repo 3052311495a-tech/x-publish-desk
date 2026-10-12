@@ -39,7 +39,9 @@ def prepare(req):
   if len(found)!=1:raise ValueError('长文配图不存在或同名不唯一：'+ref)
   image=next(iter(found.values()))
   if image.suffix.lower() not in ('.jpg','.jpeg','.png','.webp','.gif'):raise ValueError('长文图片格式不支持')
-  return '![](<'+str(image.resolve())+'>)'
+  path=str(image.resolve())
+  # The uploader's preflight reads <...> as raw HTML, so only fall back to it when the path needs it.
+  return '![]('+path+')' if not re.search(r'[\s()<>]',path) else '![](<'+path+'>)'
  source=re.sub(r'!\[\[([^]\n]+)\]\]',wiki_image,source)
  if re.search(r'\[\[',source):raise ValueError('长文含 Obsidian 双链，请先改为标准 Markdown 链接或图片路径')
  title=fields.get('title','').strip('"\'')

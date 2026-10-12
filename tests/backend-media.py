@@ -116,7 +116,7 @@ class ExtractMediaTests(unittest.TestCase):
     def test_article_image_conversion_preserves_position_and_title(self):
         _, title, source = self.prepare_article('# 测试文章\n\n![[a.png]]\n\n段落\n\n![[b.jpg]]')
         self.assertEqual(title, '测试文章')
-        self.assertEqual(source, '![](<%s>)\n\n段落\n\n![](<%s>)' % ((self.attachments / 'a.png').resolve(), (self.attachments / 'b.jpg').resolve()))
+        self.assertEqual(source, '![](%s)\n\n段落\n\n![](%s)' % ((self.attachments / 'a.png').resolve(), (self.attachments / 'b.jpg').resolve()))
 
     def test_article_non_media_wikilinks_still_rejected(self):
         with self.assertRaisesRegex(ValueError, '双链'):
